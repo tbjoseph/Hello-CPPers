@@ -10,6 +10,8 @@ Features:
 
 The shell has the ability to function almost as well as BASH. It runs Linux commands that sit as executables in the system through a a call to execvp().
 
+To run the shell: After compiling with make, run the program with ./shell. Then a prompt will be printed, and you may enter commands as you would with a normal BASH shell.
+
 The following files are from a third party:
 - Command.cpp
 - Command.h
