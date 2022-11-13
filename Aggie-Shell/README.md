@@ -3,10 +3,10 @@
 This project was an exercise in implementing a Linux shell through C++. The main file is shell.cpp.
 
 Features:
-- Navigate through the file system
 - Run Linux commands as child processes
 - Inter-process communication
-- Files input/out redirection
+- Navigate through the file system
+- File input/out redirection
 
 The shell has the ability to function almost as well as BASH. It runs Linux commands that sit as executables in the system through a a call to execvp().
 
