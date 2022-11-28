@@ -1,6 +1,6 @@
 # Hello CPPers
 
-This project was an exercise in implementing a network of users and posts through C++. The main file is CPPeers-main.cpp.
+This project was an exercise in implementing a network of users and posts through C++. The main file is Cppeers-main.cpp.
 
 The program has four main features:
 1. Load data from a file and enter the information into the network.
