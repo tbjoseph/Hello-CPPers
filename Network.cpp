@@ -24,6 +24,10 @@ Network::Network() {
 
 void Network::loadFromFile(string fileName) {
   // TODO(student): load user and post information from file
+  users.clear();
+  posts.clear();
+  tags.clear();
+
   std::ifstream file = std::ifstream(fileName);
   if (!file.is_open()) throw std::invalid_argument("Cannot open file"); //check if file opened corrctly
 
@@ -124,7 +128,8 @@ vector<Post*> Network::getPostsByUser(string userName) {
   for (unsigned int i = 0; i < users.size(); i++) {
     if (users.at(i)->getUserName() == userName) return users.at(i)->getUserPosts();
   }
-  throw std::invalid_argument("get posts by user");
+  vector<Post*> posts;
+  return posts;
 }
 
 vector<Post*> Network::getPostsWithTag(string tagName) {
@@ -132,14 +137,22 @@ vector<Post*> Network::getPostsWithTag(string tagName) {
   for (unsigned int i = 0; i < tags.size(); i++) {
     if (tags.at(i)->getTagName() == tagName) return tags.at(i)->getTagPosts();
   }
-  throw std::invalid_argument("get posts by tag");
+  vector<Post*> posts;
+  return posts;
 }
 
 vector<string> Network::getMostPopularHashtag() {
   // TODO(student): return the tag occurring in most posts
   vector<string> x;
 
+  if (tags.size() == 0) {
+    printf("No tags\n");
+    return x;
+  }
+  
+
   unsigned int max = tags.at(0)->getTagPosts().size();
+
   for (unsigned int i = 1; i < tags.size(); i++) {
     if (tags.at(i)->getTagPosts().size() > max) max = tags.at(i)->getTagPosts().size();
   }
